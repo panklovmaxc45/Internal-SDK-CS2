@@ -1,0 +1,6 @@
+﻿  main.cpp
+C:\Users\user\Desktop\Custom Hook\ImGui-DirectX-11-Kiero-Hook-master\ImGui DirectX 11 Kiero Hook\main.cpp(123,61): warning C4244: аргумент: преобразование "const int" в "float", возможна потеря данных
+C:\Users\user\Desktop\Custom Hook\ImGui-DirectX-11-Kiero-Hook-master\ImGui DirectX 11 Kiero Hook\main.cpp(123,40): warning C4244: аргумент: преобразование "const int" в "float", возможна потеря данных
+  ImGui DirectX 11 Kiero Hook.vcxproj -> C:\Users\user\Desktop\Custom Hook\ImGui-DirectX-11-Kiero-Hook-master\x64\Debug\Custom Hook.dll
+  "pwsh.exe" не является внутренней или внешней
+  командой, исполняемой программой или пакетным файлом.
