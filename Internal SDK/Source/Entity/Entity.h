@@ -18,6 +18,7 @@ public:
     };
 
     static inline const uintptr_t Client = reinterpret_cast<uintptr_t>(GetModuleHandle("client.dll"));
+    static inline const uintptr_t Engine = reinterpret_cast<uintptr_t>(GetModuleHandle("engine2.dll"));
 
     void UpdateEntity();
     const std::vector<Entity>& GetEntities() const { return Entities; }
@@ -37,3 +38,6 @@ private:
 };
 
 inline auto CEntities = std::make_unique<Entities>();
+
+const int SCREEN_WIDTH = *reinterpret_cast<int*>(Entities::Engine + Offsets::dwWindowWidth);
+const int SCREEN_HEIGHT = *reinterpret_cast<int*>(Entities::Engine + Offsets::dwWindowHeight);

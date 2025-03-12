@@ -7,7 +7,7 @@ void DrawEntity(const Entities::Entity& Entity, ImDrawList* DrawList)
     const auto LocalPosition = *reinterpret_cast<Vector3*>(LocalPawn + Offsets::OldOrigin);
 
     Vector2 Feet, Head;
-    if (Entity.FeetPos.WTS(Feet, ViewMatrix) && Entity.HeadPos.WTS(Head, ViewMatrix)) 
+    if (Entity.FeetPos.WTS(Feet, ViewMatrix, SCREEN_WIDTH, SCREEN_HEIGHT) && Entity.HeadPos.WTS(Head, ViewMatrix, SCREEN_WIDTH, SCREEN_HEIGHT))
     {
         float Height = Feet.Y - Head.Y;
         float Width = Height * 0.5f;

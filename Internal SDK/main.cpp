@@ -3,9 +3,6 @@
 #include <iostream>
 #include <ESP/ESP.h>
 
-const int SCREEN_WIDTH = GetSystemMetrics(SM_CXSCREEN);
-const int SCREEN_HEIGHT = GetSystemMetrics(SM_CXSCREEN);
-
 bool IS_MENU_VISIBLE = true;
 bool init = false;
 bool IsEsp = false;
