@@ -2,10 +2,10 @@
 #include <cstddef>
 
 namespace Offsets {
-	constexpr std::ptrdiff_t EntityList = 0x1A36A00;	// dwEntityList			(offsets.hpp)
-	constexpr std::ptrdiff_t LocalPlayer = 0x188AF20;	// dwLocalPlayerPawn	(offsets.hpp)
-	constexpr std::ptrdiff_t ViewMatrix = 0x1AA27F0;	// dwViewMatrix			(offsets.hpp)
-	constexpr std::ptrdiff_t ViewAngles = 0x1AACA70;	// dwViewAngles			(offsets.hpp)
+	constexpr std::ptrdiff_t EntityList = 0x1A37A30;	// dwEntityList			(offsets.hpp)
+	constexpr std::ptrdiff_t LocalPlayer = 0x188BF30;	// dwLocalPlayerPawn	(offsets.hpp)
+	constexpr std::ptrdiff_t ViewMatrix = 0x1AA3810;	// dwViewMatrix			(offsets.hpp)
+	constexpr std::ptrdiff_t ViewAngles = 0x1AADAA0;	// dwViewAngles			(offsets.hpp)
     /*----------------------------------------------------------------------------------------*/
 	constexpr std::ptrdiff_t Player = 0x80C;			// m_hPlayerPawn		(client_dll.hpp)
 	constexpr std::ptrdiff_t Name = 0x660;				// m_iszPlayerName		(client_dll.hpp)
