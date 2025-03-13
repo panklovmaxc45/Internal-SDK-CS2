@@ -160,11 +160,13 @@
     <ClCompile Include="Dependincies\kiero\minhook\src\hook.c" />
     <ClCompile Include="Dependincies\kiero\minhook\src\trampoline.c" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Source\Misc\Menu.cpp" />
     <ClCompile Include="Source\Entity\Entitiy.cpp" />
     <ClCompile Include="Source\ESP\ESP.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Dependincies\kiero\minhook\dll_resources\MinHook.def" />
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Dependincies\kiero\minhook\dll_resources\MinHook.rc" />
@@ -191,12 +193,21 @@
     <ClInclude Include="Dependincies\kiero\minhook\src\hde\table64.h" />
     <ClInclude Include="Dependincies\kiero\minhook\src\trampoline.h" />
     <ClInclude Include="Dependincies\Fonts.h" />
+    <ClInclude Include="Source\Misc\Menu.h" />
     <ClInclude Include="Source\Entity\Entity.h" />
     <ClInclude Include="Source\ESP\ESP.h" />
     <ClInclude Include="Source\Math\Math.h" />
+    <ClInclude Include="Source\Misc\Config.h" />
     <ClInclude Include="Source\Offsets.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
+    <Import Project="..\packages\nlohmann.json.3.11.3\build\native\nlohmann.json.targets" Condition="Exists('..\packages\nlohmann.json.3.11.3\build\native\nlohmann.json.targets')" />
   </ImportGroup>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>Данный проект ссылается на пакеты NuGet, отсутствующие на этом компьютере. Используйте восстановление пакетов NuGet, чтобы скачать их.  Дополнительную информацию см. по адресу: http://go.microsoft.com/fwlink/?LinkID=322105. Отсутствует следующий файл: {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\nlohmann.json.3.11.3\build\native\nlohmann.json.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\nlohmann.json.3.11.3\build\native\nlohmann.json.targets'))" />
+  </Target>
 </Project>

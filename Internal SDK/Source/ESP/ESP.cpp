@@ -15,12 +15,28 @@ void DrawEntity(const Entities::Entity& Entity, ImDrawList* DrawList)
         ImVec2 BoxMin = { Feet.X - Width / 2, Head.Y };
         ImVec2 BoxMax = { Feet.X + Width / 2, Head.Y + Height };
 
-        ImColor BoxColor = ImColor(255, 255, 255);
         ImColor OutlineColor = ImColor(0, 0, 0);
 
-        DrawList->AddRect(BoxMin - ImVec2(1.0f, 1.0f), BoxMax + ImVec2(1.0f, 1.0f), OutlineColor, 0.0f, 0, 1.0f);
-        DrawList->AddRect(BoxMin + ImVec2(1.0f, 1.0f), BoxMax - ImVec2(1.0f, 1.0f), OutlineColor, 0.0f, 0, 1.0f);
-        DrawList->AddRect(BoxMin, BoxMax, BoxColor, 0.0f, 0, 1.0f);
+        if (VisualsConfig.BOUNDING_BOX)
+        {
+            DrawList->AddRect(BoxMin - ImVec2(1.0f, 1.0f), BoxMax + ImVec2(1.0f, 1.0f), OutlineColor, 0.0f, 0, 1.0f);
+            DrawList->AddRect(BoxMin + ImVec2(1.0f, 1.0f), BoxMax - ImVec2(1.0f, 1.0f), OutlineColor, 0.0f, 0, 1.0f);
+            DrawList->AddRect(BoxMin, BoxMax, ImColor(VisualsConfig.BOUNDING_BOX_COLOR), 0.0f, 0, 1.0f);
+        }
+
+        if (VisualsConfig.HEALTH_BAR)
+        {
+            constexpr float BAR_WIDTH = 1.0f;       
+            constexpr float OFFSET = 3.0f;          
+
+            const float BarLeft = Feet.X - Width / 2 - OFFSET - BAR_WIDTH;
+            const float BarTop = Head.Y;
+            const float BarBottom = BarTop + Height;
+            const float BarHeight = Height * (Entity.Health / 100.0f);
+
+            DrawList->AddRect(ImVec2(BarLeft - 0.5f, BarTop - 0.5f), ImVec2(BarLeft + BAR_WIDTH + 0.5f, BarBottom + 0.5f), IM_COL32(0, 0, 0, 255), 0.0f, 0, 1.0f);
+            DrawList->AddRectFilled(ImVec2(BarLeft, BarBottom - BarHeight), ImVec2(BarLeft + BAR_WIDTH, BarBottom), ImColor(VisualsConfig.HEALTH_BAR_COLOR));
+        }
     }
 }
 

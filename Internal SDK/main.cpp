@@ -2,10 +2,10 @@
 #include "includes.h"
 #include <iostream>
 #include <ESP/ESP.h>
+#include <Misc/Menu.h>
 
 bool IS_MENU_VISIBLE = true;
 bool init = false;
-bool IsEsp = false;
 
 extern LRESULT ImGui_ImplWin32_WndProcHandler(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam);
 
@@ -111,21 +111,11 @@ HRESULT __stdcall hkPresent(IDXGISwapChain* pSwapChain, UINT SyncInterval, UINT 
     ImGui_ImplWin32_NewFrame();
     ImGui::NewFrame();
 
-    if (IsEsp)
-    {
-        Render::Players();
-    }
+    if(VisualsConfig.ENABLE)
+    Render::Players();
 
     if (IS_MENU_VISIBLE) {
-        ImGui::SetNextWindowPos(ImVec2(SCREEN_WIDTH / 4, SCREEN_HEIGHT / 4), ImGuiCond_Once);
-        ImGui::SetNextWindowSize(ImVec2(WINDOW_WIDTH, WINDOW_HEIGHT));
-        ImGui::Begin("ImGui Window", &IS_MENU_VISIBLE, ImGuiWindowFlags_NoBringToFrontOnFocus | ImGuiWindowFlags_NoResize | ImGuiWindowFlags_NoTitleBar);
-        {
-            ImGui::SetCursorPos(ImVec2(15, 10));
-            custom::Checkbox("Esp Enabled", &IsEsp);
-        }
-        ImGui::End();
-
+        Gui::Render();
         ImGui::GetIO().WantCaptureMouse = true;
         ImGui::GetIO().WantCaptureKeyboard = true;
         ImGui::GetIO().WantTextInput = true;

@@ -1,5 +1,10 @@
 ﻿C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(531,5): warning MSB8028: промежуточный каталог (x64\Debug\) содержит файлы, которые используются совместно с другим проектом (Custom Hook.vcxproj).  Это может привести к ошибкам очистки и перестроения.
   ESP.cpp
-  Internal SDK.vcxproj -> C:\Users\user\Desktop\Custom Hook\Internal SDK\x64\Debug\Internal SDK.dll
+  Menu.cpp
+C:\Users\user\Documents\GitHub\Internal-SDK-CS2\Internal SDK\Source\Misc\Menu.cpp(52,68): warning C4244: аргумент: преобразование "int" в "float", возможна потеря данных
+C:\Users\user\Documents\GitHub\Internal-SDK-CS2\Internal SDK\Source\Misc\Menu.cpp(52,49): warning C4244: аргумент: преобразование "int" в "float", возможна потеря данных
+  main.cpp
+  Создание кода...
+  Internal SDK.vcxproj -> C:\Users\user\Documents\GitHub\Internal-SDK-CS2\x64\Debug\Internal SDK.dll
   "pwsh.exe" не является внутренней или внешней
   командой, исполняемой программой или пакетным файлом.

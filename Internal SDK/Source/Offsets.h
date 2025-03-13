@@ -1,6 +1,4 @@
 #pragma once
-#include <cstddef>
-
 namespace Offsets {
 	constexpr std::ptrdiff_t EntityList = 0x1A37A30;	// dwEntityList			(offsets.hpp)
 	constexpr std::ptrdiff_t LocalPlayer = 0x188BF30;	// dwLocalPlayerPawn	(offsets.hpp)
